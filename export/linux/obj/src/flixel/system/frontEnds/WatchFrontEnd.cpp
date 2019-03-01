@@ -16,9 +16,6 @@
 #ifndef INCLUDED_flixel_system_debug_Window
 #include <flixel/system/debug/Window.h>
 #endif
-#ifndef INCLUDED_flixel_system_debug_console_ConsoleUtil
-#include <flixel/system/debug/console/ConsoleUtil.h>
-#endif
 #ifndef INCLUDED_flixel_system_debug_watch_Watch
 #include <flixel/system/debug/watch/Watch.h>
 #endif
@@ -27,9 +24,6 @@
 #endif
 #ifndef INCLUDED_flixel_system_frontEnds_WatchFrontEnd
 #include <flixel/system/frontEnds/WatchFrontEnd.h>
-#endif
-#ifndef INCLUDED_hscript_Expr
-#include <hscript/Expr.h>
 #endif
 #ifndef INCLUDED_openfl_display_DisplayObject
 #include <openfl/display/DisplayObject.h>
@@ -123,8 +117,7 @@ HX_DEFINE_DYNAMIC_FUNC1(WatchFrontEnd_obj,removeQuick,(void))
 
 void WatchFrontEnd_obj::addExpression(::String expression,::String displayName){
             	HX_STACKFRAME(&_hx_pos_25766fbc3da200fe_77_addExpression)
-HXLINE(  79)		 ::hscript::Expr parsedExpr = null();
-HXLINE(  81)		parsedExpr = ::flixel::_hx_system::debug::console::ConsoleUtil_obj::parseCommand(expression);
+HXLINE(  79)		::String parsedExpr = null();
 HXLINE(  83)		 ::flixel::_hx_system::debug::watch::Watch _hx_tmp = ::flixel::FlxG_obj::game->debugger->watch;
 HXDLIN(  83)		::String _hx_tmp1;
 HXDLIN(  83)		if (hx::IsNull( displayName )) {

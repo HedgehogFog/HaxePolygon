@@ -1,7 +1,7 @@
 package system;
 
 import flixel.math.FlxPoint;
-import sys.io.File;
+// import sys.io.File;
 import haxe.Json;
 import haxe.Unserializer;
 
@@ -24,43 +24,43 @@ class DataSystem {
         // builder.add(size);
         // var content = builder.toString();
         // File.saveContent("data.vll", "Penis");
-        var fout = File.write("data.vll", true);  
-        try{
-            fout.writeFloat(points.length);
-            for (point in points){
-                fout.writeFloat(point.x);
-                fout.writeFloat(point.y);
-            }        
-            fout.writeFloat(rotation);
-            fout.writeFloat(size);        
-        } catch(ex: Dynamic){
-            trace(ex);
-        }
+        // var fout = File.write("data.vll", true);  
+        // try{
+        //     fout.writeFloat(points.length);
+        //     for (point in points){
+        //         fout.writeFloat(point.x);
+        //         fout.writeFloat(point.y);
+        //     }        
+        //     fout.writeFloat(rotation);
+        //     fout.writeFloat(size);        
+        // } catch(ex: Dynamic){
+            // trace(ex);
+        // }
     } 
 
     public static function load(): SaveData {
-        trace(File.getContent("data.vll"));        
-        var fin = File.read("data.vll", false);        
+        // trace(File.getContent("data.vll"));        
+        // var fin = File.read("data.vll", false);        
         var data: SaveData = {
             points: new Array<FlxPoint>(),
             rotation: 0,
             size:     0
         };
 
-        try{
-            var length = fin.readUInt16();
-            for(i in 0...length){
-                var x = fin.readFloat();
-                var y = fin.readFloat();
-                data.points.push(new FlxPoint(x, y));
-            }
-            data.rotation = fin.readFloat();
-            data.size     = fin.readFloat();
+        // try{
+        //     var length = fin.readUInt16();
+        //     for(i in 0...length){
+        //         var x = fin.readFloat();
+        //         var y = fin.readFloat();
+        //         data.points.push(new FlxPoint(x, y));
+        //     }
+        //     data.rotation = fin.readFloat();
+        //     data.size     = fin.readFloat();
 
-        }catch(ex: haxe.io.Eof){
-            trace(ex);
-        }
-        fin.close();
+        // }catch(ex: haxe.io.Eof){
+        //     trace(ex);
+        // }
+        // fin.close();
 
         return data;
     }

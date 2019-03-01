@@ -58,9 +58,6 @@ class HXCPP_CLASS_ATTRIBUTES File_obj : public hx::Object
 		static ::String getContent(::String path);
 		static ::Dynamic getContent_dyn();
 
-		static void saveContent(::String path,::String content);
-		static ::Dynamic saveContent_dyn();
-
 		static  ::sys::io::FileInput read(::String path,hx::Null< bool >  binary);
 		static ::Dynamic read_dyn();
 

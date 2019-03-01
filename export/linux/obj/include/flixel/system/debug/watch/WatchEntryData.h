@@ -7,7 +7,6 @@
 #endif
 
 HX_DECLARE_CLASS4(flixel,_hx_system,debug,watch,WatchEntryData)
-HX_DECLARE_CLASS1(hscript,Expr)
 namespace flixel{
 namespace _hx_system{
 namespace debug{
@@ -28,7 +27,7 @@ class WatchEntryData_obj : public hx::EnumBase_obj
 		::String GetEnumName( ) const { return HX_HCSTRING("flixel.system.debug.watch.WatchEntryData","\x54","\x23","\x6d","\xa5"); }
 		::String __ToString() const { return HX_HCSTRING("WatchEntryData.","\x01","\xe4","\xe7","\x77") + _hx_tag; }
 
-		static ::flixel::_hx_system::debug::watch::WatchEntryData EXPRESSION(::String expression, ::hscript::Expr parsedExpr);
+		static ::flixel::_hx_system::debug::watch::WatchEntryData EXPRESSION(::String expression,::String parsedExpr);
 		static ::Dynamic EXPRESSION_dyn();
 		static ::flixel::_hx_system::debug::watch::WatchEntryData FIELD( ::Dynamic object,::String field);
 		static ::Dynamic FIELD_dyn();

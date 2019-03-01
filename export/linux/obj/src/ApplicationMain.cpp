@@ -166,7 +166,7 @@ HXLINE( 131)			::ApplicationMain_obj::start(a1);
             	HX_GC_STACKFRAME(&_hx_pos_6fcf922b66429816_36_create)
 HXLINE(  38)		 ::openfl::display::Application app =  ::openfl::display::Application_obj::__alloc( HX_CTX );
 HXLINE(  40)		::ManifestResources_obj::init(config);
-HXLINE(  42)		app->meta->set(HX_("build",2e,db,ea,ba),HX_("317",d9,dd,26,00));
+HXLINE(  42)		app->meta->set(HX_("build",2e,db,ea,ba),HX_("2",32,00,00,00));
 HXLINE(  43)		app->meta->set(HX_("company",3d,15,69,83),HX_("HaxeFlixel",42,8f,0c,ac));
 HXLINE(  44)		app->meta->set(HX_("file",7c,ce,bb,43),HX_("TimeOfDeath",f0,89,09,91));
 HXLINE(  45)		app->meta->set(HX_("name",4b,72,ff,48),HX_("TimeOfDeath",f0,89,09,91));

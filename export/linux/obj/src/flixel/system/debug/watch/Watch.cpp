@@ -49,9 +49,6 @@
 #ifndef INCLUDED_flixel_util__FlxSignal_FlxSignal0
 #include <flixel/util/_FlxSignal/FlxSignal0.h>
 #endif
-#ifndef INCLUDED_hscript_Expr
-#include <hscript/Expr.h>
-#endif
 #ifndef INCLUDED_openfl_display_BitmapData
 #include <openfl/display/BitmapData.h>
 #endif

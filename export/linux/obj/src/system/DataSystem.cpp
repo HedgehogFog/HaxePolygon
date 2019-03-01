@@ -36,7 +36,7 @@
 #endif
 
 HX_LOCAL_STACK_FRAME(_hx_pos_f90293a6dd6dcc06_17_save,"system.DataSystem","save",0x39b32f73,"system.DataSystem.save","system/DataSystem.hx",17,0x5cb2b925)
-HX_LOCAL_STACK_FRAME(_hx_pos_f90293a6dd6dcc06_42_load,"system.DataSystem","load",0x351d3e5c,"system.DataSystem.load","system/DataSystem.hx",42,0x5cb2b925)
+HX_LOCAL_STACK_FRAME(_hx_pos_f90293a6dd6dcc06_41_load,"system.DataSystem","load",0x351d3e5c,"system.DataSystem.load","system/DataSystem.hx",41,0x5cb2b925)
 namespace _hx_system{
 
 void DataSystem_obj::__construct() { }
@@ -58,7 +58,7 @@ bool DataSystem_obj::_hx_isInstanceOf(int inClassId) {
 
 void DataSystem_obj::save(::Array< ::Dynamic> points,Float rotation,Float size){
             	HX_STACKFRAME(&_hx_pos_f90293a6dd6dcc06_17_save)
-HXLINE(  27)		 ::sys::io::FileOutput fout = ::sys::io::File_obj::write(HX_("data.vll",32,6c,5c,73),null());
+HXLINE(  27)		 ::sys::io::FileOutput fout = ::sys::io::File_obj::write(HX_("data.vll",32,6c,5c,73),true);
 HXLINE(  28)		try {
             			HX_STACK_CATCHABLE( ::Dynamic, 0);
 HXLINE(  29)			fout->writeFloat(points->length);
@@ -73,13 +73,12 @@ HXLINE(  32)					fout->writeFloat(point->y);
             			}
 HXLINE(  34)			fout->writeFloat(rotation);
 HXLINE(  35)			fout->writeFloat(size);
-HXLINE(  36)			::sys::io::File_obj::saveContent(HX_("data.vll",32,6c,5c,73),HX_("Penis",e3,c8,24,53));
             		}
             		catch( ::Dynamic _hx_e){
             			if (_hx_e.IsClass<  ::Dynamic >() ){
             				HX_STACK_BEGIN_CATCH
             				 ::Dynamic ex = _hx_e;
-HXLINE(  38)				::haxe::Log_obj::trace(ex,hx::SourceInfo(HX_("DataSystem.hx",85,2f,f9,9d),38,HX_("system.DataSystem",f8,27,7d,9d),HX_("save",3d,8b,4d,4c)));
+HXLINE(  37)				::haxe::Log_obj::trace(ex,hx::SourceInfo(HX_("DataSystem.hx",85,2f,f9,9d),37,HX_("system.DataSystem",f8,27,7d,9d),HX_("save",3d,8b,4d,4c)));
             			}
             			else {
             				HX_STACK_DO_THROW(_hx_e);
@@ -91,7 +90,10 @@ HXLINE(  38)				::haxe::Log_obj::trace(ex,hx::SourceInfo(HX_("DataSystem.hx",85,
 STATIC_HX_DEFINE_DYNAMIC_FUNC3(DataSystem_obj,save,(void))
 
  ::Dynamic DataSystem_obj::load(){
-            	HX_GC_STACKFRAME(&_hx_pos_f90293a6dd6dcc06_42_load)
+            	HX_GC_STACKFRAME(&_hx_pos_f90293a6dd6dcc06_41_load)
+HXLINE(  42)		 ::Dynamic _hx_tmp = ::haxe::Log_obj::trace;
+HXDLIN(  42)		::String _hx_tmp1 = ::sys::io::File_obj::getContent(HX_("data.vll",32,6c,5c,73));
+HXDLIN(  42)		_hx_tmp(_hx_tmp1,hx::SourceInfo(HX_("DataSystem.hx",85,2f,f9,9d),42,HX_("system.DataSystem",f8,27,7d,9d),HX_("load",26,9a,b7,47)));
 HXLINE(  43)		 ::sys::io::FileInput fin = ::sys::io::File_obj::read(HX_("data.vll",32,6c,5c,73),false);
 HXLINE(  44)		 ::Dynamic data =  ::Dynamic(hx::Anon_obj::Create(3)
             			->setFixed(0,HX_("points",23,12,2e,f7),::Array_obj< ::Dynamic>::__new())

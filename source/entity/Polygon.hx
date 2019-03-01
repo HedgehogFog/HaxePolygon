@@ -30,7 +30,8 @@ class Polygon extends FlxSprite {
     }
     public var rotation  = 0.0;
     public var scaleSize = 1.0; 
-
+    public var transform: FlxPoint;
+    
     public override function update(elapsed: Float){
 
         if (FlxG.mouse.justPressed)
@@ -64,6 +65,22 @@ class Polygon extends FlxSprite {
             if (scaleSize - 0.1 > 0)
                 scaleSize -= 0.1;
             boundsFind();        
+        }
+        
+        if (FlxG.keys.anyPressed([A])){
+            transform.x += 1;
+        }
+        
+        if (FlxG.keys.anyPressed([D])){
+            transform.x -= 1;
+        }
+
+        if (FlxG.keys.anyPressed([W])){
+            transform.y += 1;
+        }
+        
+        if (FlxG.keys.anyPressed([S])){
+            transform.y -= 1;
         }
 
  
@@ -133,8 +150,8 @@ class Polygon extends FlxSprite {
                 x = cos * x    - sin * y;
                 y = sin * oldX + cos * y;
             }
-            locPoints.push(new FlxVector(x + centroid.x, 
-                                         y + centroid.y));
+            locPoints.push(new FlxVector(transform.x + x + centroid.x, 
+                                         transform.y + y + centroid.y));
         }
         return locPoints;
     }

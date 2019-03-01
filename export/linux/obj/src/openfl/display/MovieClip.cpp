@@ -20,18 +20,6 @@
 #ifndef INCLUDED_haxe_ds_IntMap
 #include <haxe/ds/IntMap.h>
 #endif
-#ifndef INCLUDED_haxe_ds_StringMap
-#include <haxe/ds/StringMap.h>
-#endif
-#ifndef INCLUDED_hscript_Expr
-#include <hscript/Expr.h>
-#endif
-#ifndef INCLUDED_hscript_Interp
-#include <hscript/Interp.h>
-#endif
-#ifndef INCLUDED_hscript_Parser
-#include <hscript/Parser.h>
-#endif
 #ifndef INCLUDED_lime_app_IModule
 #include <lime/app/IModule.h>
 #endif
@@ -142,7 +130,6 @@ HX_LOCAL_STACK_FRAME(_hx_pos_9f7ac0293b858dd4_385___updateFrameScript,"openfl.di
 HX_LOCAL_STACK_FRAME(_hx_pos_9f7ac0293b858dd4_430___updateSymbol,"openfl.display.MovieClip","__updateSymbol",0x5332e1d9,"openfl.display.MovieClip.__updateSymbol","openfl/display/MovieClip.hx",430,0x2b84738a)
 HX_LOCAL_STACK_FRAME(_hx_pos_9f7ac0293b858dd4_598___evaluateFrameScripts,"openfl.display.MovieClip","__evaluateFrameScripts",0xeeb7ecec,"openfl.display.MovieClip.__evaluateFrameScripts","openfl/display/MovieClip.hx",598,0x2b84738a)
 HX_LOCAL_STACK_FRAME(_hx_pos_9f7ac0293b858dd4_634___fromSymbol,"openfl.display.MovieClip","__fromSymbol",0xc2d8a9fa,"openfl.display.MovieClip.__fromSymbol","openfl/display/MovieClip.hx",634,0x2b84738a)
-HX_LOCAL_STACK_FRAME(_hx_pos_9f7ac0293b858dd4_701___fromSymbol,"openfl.display.MovieClip","__fromSymbol",0xc2d8a9fa,"openfl.display.MovieClip.__fromSymbol","openfl/display/MovieClip.hx",701,0x2b84738a)
 HX_LOCAL_STACK_FRAME(_hx_pos_9f7ac0293b858dd4_882___getNextFrame,"openfl.display.MovieClip","__getNextFrame",0x21b0ba5c,"openfl.display.MovieClip.__getNextFrame","openfl/display/MovieClip.hx",882,0x2b84738a)
 HX_LOCAL_STACK_FRAME(_hx_pos_9f7ac0293b858dd4_907___goto,"openfl.display.MovieClip","__goto",0x81b9cd3b,"openfl.display.MovieClip.__goto","openfl/display/MovieClip.hx",907,0x2b84738a)
 HX_LOCAL_STACK_FRAME(_hx_pos_9f7ac0293b858dd4_922___resolveFrameReference,"openfl.display.MovieClip","__resolveFrameReference",0x22812f52,"openfl.display.MovieClip.__resolveFrameReference","openfl/display/MovieClip.hx",922,0x2b84738a)
@@ -581,7 +568,6 @@ HXLINE( 645)		this->_hx___lastFrameUpdate = (int)-1;
 HXLINE( 646)		this->_hx___totalFrames = this->_hx___symbol->frames->length;
 HXLINE( 648)		int frame;
 HXLINE( 649)		 ::openfl::_internal::symbols::timeline::Frame frameData;
-HXLINE( 652)		 ::hscript::Parser parser = null();
 HXLINE( 655)		{
 HXLINE( 655)			int _g1 = (int)0;
 HXDLIN( 655)			int _g = this->_hx___symbol->frames->length;
@@ -607,23 +593,7 @@ HXLINE( 678)						if (hx::IsNull( this->_hx___frameScripts )) {
 HXLINE( 680)							this->_hx___frameScripts =  ::haxe::ds::IntMap_obj::__alloc( HX_CTX );
             						}
 HXLINE( 684)						try {
-            							HX_BEGIN_LOCAL_FUNC_S2(hx::LocalFunc,_hx_Closure_0, ::hscript::Interp,interp, ::hscript::Expr,program) HXARGC(0)
-            							void _hx_run(){
-            								HX_GC_STACKFRAME(&_hx_pos_9f7ac0293b858dd4_701___fromSymbol)
-HXLINE( 701)								interp->execute(program);
-            							}
-            							HX_END_LOCAL_FUNC0((void))
-
             							HX_STACK_CATCHABLE( ::Dynamic, 0);
-HXLINE( 688)							if (hx::IsNull( parser )) {
-HXLINE( 690)								parser =  ::hscript::Parser_obj::__alloc( HX_CTX );
-HXLINE( 691)								parser->allowTypes = true;
-            							}
-HXLINE( 695)							 ::hscript::Expr program = parser->parseString(frameData->scriptSource,null());
-HXLINE( 696)							 ::hscript::Interp interp =  ::hscript::Interp_obj::__alloc( HX_CTX );
-HXLINE( 697)							interp->variables->set(HX_("this",5e,06,fc,4c),hx::ObjectPtr<OBJ_>(this));
-HXLINE( 699)							 ::Dynamic script =  ::Dynamic(new _hx_Closure_0(interp,program));
-HXLINE( 705)							this->_hx___frameScripts->set(frame,script);
             						}
             						catch( ::Dynamic _hx_e){
             							if (_hx_e.IsClass<  ::Dynamic >() ){
@@ -953,10 +923,10 @@ HXDLIN(1074)					if ((_hx_tmp1 < this->_hx___currentFrame)) {
 HXLINE(1076)						this->_hx___currentLabel = label->get_name();
             					}
             					else {
-HXLINE(1080)						goto _hx_goto_35;
+HXLINE(1080)						goto _hx_goto_34;
             					}
             				}
-            				_hx_goto_35:;
+            				_hx_goto_34:;
             			}
             		}
             	}
@@ -979,10 +949,10 @@ HXLINE(1095)					 ::openfl::display::DisplayObject child = _g3->__get(_g2).Stati
 HXDLIN(1095)					_g2 = (_g2 + (int)1);
 HXLINE(1097)					if ((child->get_name() == field)) {
 HXLINE(1099)						::Reflect_obj::setField(hx::ObjectPtr<OBJ_>(this),field,child);
-HXLINE(1100)						goto _hx_goto_38;
+HXLINE(1100)						goto _hx_goto_37;
             					}
             				}
-            				_hx_goto_38:;
+            				_hx_goto_37:;
             			}
             		}
             	}
@@ -1109,19 +1079,19 @@ HXLINE(1202)							::String _g2 = frameLabel->get_name();
 HXDLIN(1202)							::String _hx_switch_0 = _g2;
             							if (  (_hx_switch_0==HX_("_down",41,14,7f,f5)) ){
 HXLINE(1206)								this->_hx___hasDown = true;
-HXDLIN(1206)								goto _hx_goto_45;
+HXDLIN(1206)								goto _hx_goto_44;
             							}
             							if (  (_hx_switch_0==HX_("_over",33,ad,c9,fc)) ){
 HXLINE(1205)								this->_hx___hasOver = true;
-HXDLIN(1205)								goto _hx_goto_45;
+HXDLIN(1205)								goto _hx_goto_44;
             							}
             							if (  (_hx_switch_0==HX_("_up",7a,7c,48,00)) ){
 HXLINE(1204)								this->_hx___hasUp = true;
-HXDLIN(1204)								goto _hx_goto_45;
+HXDLIN(1204)								goto _hx_goto_44;
             							}
             							/* default */{
             							}
-            							_hx_goto_45:;
+            							_hx_goto_44:;
             						}
             					}
             				}

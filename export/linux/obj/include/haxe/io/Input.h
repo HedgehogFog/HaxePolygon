@@ -6,7 +6,6 @@
 #include <hxcpp.h>
 #endif
 
-HX_DECLARE_CLASS2(haxe,io,Bytes)
 HX_DECLARE_CLASS2(haxe,io,Input)
 
 namespace haxe{
@@ -58,14 +57,8 @@ class HXCPP_CLASS_ATTRIBUTES Input_obj : public hx::Object
 		virtual int readByte();
 		::Dynamic readByte_dyn();
 
-		virtual int readBytes( ::haxe::io::Bytes s,int pos,int len);
-		::Dynamic readBytes_dyn();
-
 		virtual void close();
 		::Dynamic close_dyn();
-
-		void readFullBytes( ::haxe::io::Bytes s,int pos,int len);
-		::Dynamic readFullBytes_dyn();
 
 		::String readLine();
 		::Dynamic readLine_dyn();
@@ -78,9 +71,6 @@ class HXCPP_CLASS_ATTRIBUTES Input_obj : public hx::Object
 
 		int readInt32();
 		::Dynamic readInt32_dyn();
-
-		::String readString(int len);
-		::Dynamic readString_dyn();
 
 };
 

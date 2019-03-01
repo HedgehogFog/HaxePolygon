@@ -1,2 +1,2 @@
 hxcpp_api_level=331
-hxcpp=/home/hedgehog/haxe/lib/hxcpp/4,0,8/
+hxcpp=/home/ubuntu/haxelib/hxcpp/4,0,8/

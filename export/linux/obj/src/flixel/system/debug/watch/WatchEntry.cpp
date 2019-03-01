@@ -32,9 +32,6 @@
 #ifndef INCLUDED_flixel_system_debug_GraphicCloseButton
 #include <flixel/system/debug/GraphicCloseButton.h>
 #endif
-#ifndef INCLUDED_flixel_system_debug_console_ConsoleUtil
-#include <flixel/system/debug/console/ConsoleUtil.h>
-#endif
 #ifndef INCLUDED_flixel_system_debug_watch_EditableTextField
 #include <flixel/system/debug/watch/EditableTextField.h>
 #endif
@@ -58,9 +55,6 @@
 #endif
 #ifndef INCLUDED_flixel_util_IFlxDestroyable
 #include <flixel/util/IFlxDestroyable.h>
-#endif
-#ifndef INCLUDED_hscript_Expr
-#include <hscript/Expr.h>
 #endif
 #ifndef INCLUDED_openfl_display_BitmapData
 #include <openfl/display/BitmapData.h>
@@ -298,8 +292,8 @@ HXLINE( 122)				return value;
             			}
             			break;
             			case (int)2: {
-HXLINE( 115)				 ::hscript::Expr parsedExpr = _g->_hx_getObject(1).StaticCast<  ::hscript::Expr >();
-HXLINE( 117)				return ::flixel::_hx_system::debug::console::ConsoleUtil_obj::runExpr(parsedExpr);
+HXLINE( 115)				::String parsedExpr = _g->_hx_getString(1);
+HXLINE( 119)				return HX_("hscript is not installed",84,84,f9,28);
             			}
             			break;
             		}

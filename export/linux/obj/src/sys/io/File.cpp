@@ -18,7 +18,6 @@
 #endif
 
 HX_LOCAL_STACK_FRAME(_hx_pos_8a637e7fc3b98e6a_30_getContent,"sys.io.File","getContent",0xb28b4a0e,"sys.io.File.getContent","/usr/share/haxe/std/cpp/_std/sys/io/File.hx",30,0xa9f746ff)
-HX_LOCAL_STACK_FRAME(_hx_pos_8a637e7fc3b98e6a_38_saveContent,"sys.io.File","saveContent",0xa5557651,"sys.io.File.saveContent","/usr/share/haxe/std/cpp/_std/sys/io/File.hx",38,0xa9f746ff)
 HX_LOCAL_STACK_FRAME(_hx_pos_8a637e7fc3b98e6a_51_read,"sys.io.File","read",0x203d07e1,"sys.io.File.read","/usr/share/haxe/std/cpp/_std/sys/io/File.hx",51,0xa9f746ff)
 HX_LOCAL_STACK_FRAME(_hx_pos_8a637e7fc3b98e6a_55_write,"sys.io.File","write",0xfec8a9f4,"sys.io.File.write","/usr/share/haxe/std/cpp/_std/sys/io/File.hx",55,0xa9f746ff)
 namespace sys{
@@ -48,16 +47,6 @@ HXDLIN(  30)		return _hx_std_file_contents_string(path);
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(File_obj,getContent,return )
-
-void File_obj::saveContent(::String path,::String content){
-            	HX_STACKFRAME(&_hx_pos_8a637e7fc3b98e6a_38_saveContent)
-HXLINE(  39)		 ::sys::io::FileOutput f = ::sys::io::File_obj::write(path,null());
-HXLINE(  40)		f->writeString(content);
-HXLINE(  41)		f->close();
-            	}
-
-
-STATIC_HX_DEFINE_DYNAMIC_FUNC2(File_obj,saveContent,(void))
 
  ::sys::io::FileInput File_obj::read(::String path,hx::Null< bool >  __o_binary){
 bool binary = __o_binary.Default(true);
@@ -107,9 +96,6 @@ bool File_obj::__GetStatic(const ::String &inName, Dynamic &outValue, hx::Proper
 		break;
 	case 10:
 		if (HX_FIELD_EQ(inName,"getContent") ) { outValue = getContent_dyn(); return true; }
-		break;
-	case 11:
-		if (HX_FIELD_EQ(inName,"saveContent") ) { outValue = saveContent_dyn(); return true; }
 	}
 	return false;
 }
@@ -134,7 +120,6 @@ hx::Class File_obj::__mClass;
 
 static ::String File_obj_sStaticFields[] = {
 	HX_HCSTRING("getContent","\x43","\x13","\xd9","\x68"),
-	HX_HCSTRING("saveContent","\x7c","\xbb","\x17","\x73"),
 	HX_HCSTRING("read","\x56","\x4b","\xa7","\x4b"),
 	HX_HCSTRING("write","\xdf","\x6c","\x59","\xd0"),
 	::String(null())

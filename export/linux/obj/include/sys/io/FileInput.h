@@ -9,7 +9,6 @@
 #ifndef INCLUDED_haxe_io_Input
 #include <haxe/io/Input.h>
 #endif
-HX_DECLARE_CLASS2(haxe,io,Bytes)
 HX_DECLARE_CLASS2(haxe,io,Input)
 HX_DECLARE_CLASS2(sys,io,FileInput)
 
@@ -51,8 +50,6 @@ class HXCPP_CLASS_ATTRIBUTES FileInput_obj : public  ::haxe::io::Input_obj
 
 		 ::Dynamic _hx___f;
 		int readByte();
-
-		int readBytes( ::haxe::io::Bytes s,int p,int l);
 
 		void close();
 

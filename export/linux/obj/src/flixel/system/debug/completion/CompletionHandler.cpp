@@ -34,12 +34,6 @@
 #ifndef INCLUDED_flixel_system_debug_completion_CompletionList
 #include <flixel/system/debug/completion/CompletionList.h>
 #endif
-#ifndef INCLUDED_flixel_system_debug_console_ConsoleUtil
-#include <flixel/system/debug/console/ConsoleUtil.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_console__ConsoleUtil_Interp
-#include <flixel/system/debug/console/_ConsoleUtil/Interp.h>
-#endif
 #ifndef INCLUDED_flixel_system_debug_watch_Watch
 #include <flixel/system/debug/watch/Watch.h>
 #endif
@@ -54,9 +48,6 @@
 #endif
 #ifndef INCLUDED_flixel_util_FlxStringUtil
 #include <flixel/util/FlxStringUtil.h>
-#endif
-#ifndef INCLUDED_hscript_Interp
-#include <hscript/Interp.h>
 #endif
 #ifndef INCLUDED_lime_text__UTF8String_UTF8String_Impl_
 #include <lime/text/_UTF8String/UTF8String_Impl_.h>
@@ -97,11 +88,11 @@ HX_LOCAL_STACK_FRAME(_hx_pos_d4c828664754b74a_37_getTextUntilCaret,"flixel.syste
 HX_LOCAL_STACK_FRAME(_hx_pos_d4c828664754b74a_46_getCaretIndex,"flixel.system.debug.completion.CompletionHandler","getCaretIndex",0x5ae25f7b,"flixel.system.debug.completion.CompletionHandler.getCaretIndex","flixel/system/debug/completion/CompletionHandler.hx",46,0x776a5e1a)
 HX_LOCAL_STACK_FRAME(_hx_pos_d4c828664754b74a_51_onKeyUp,"flixel.system.debug.completion.CompletionHandler","onKeyUp",0x7f599871,"flixel.system.debug.completion.CompletionHandler.onKeyUp","flixel/system/debug/completion/CompletionHandler.hx",51,0x776a5e1a)
 HX_LOCAL_STACK_FRAME(_hx_pos_d4c828664754b74a_78_invokeCompletion,"flixel.system.debug.completion.CompletionHandler","invokeCompletion",0x74f655be,"flixel.system.debug.completion.CompletionHandler.invokeCompletion","flixel/system/debug/completion/CompletionHandler.hx",78,0x776a5e1a)
-HX_LOCAL_STACK_FRAME(_hx_pos_d4c828664754b74a_112_getGlobals,"flixel.system.debug.completion.CompletionHandler","getGlobals",0x3af6d144,"flixel.system.debug.completion.CompletionHandler.getGlobals","flixel/system/debug/completion/CompletionHandler.hx",112,0x776a5e1a)
+HX_LOCAL_STACK_FRAME(_hx_pos_d4c828664754b74a_114_getGlobals,"flixel.system.debug.completion.CompletionHandler","getGlobals",0x3af6d144,"flixel.system.debug.completion.CompletionHandler.getGlobals","flixel/system/debug/completion/CompletionHandler.hx",114,0x776a5e1a)
 HX_LOCAL_STACK_FRAME(_hx_pos_d4c828664754b74a_119_getCharXPosition,"flixel.system.debug.completion.CompletionHandler","getCharXPosition",0x2e5e3e1f,"flixel.system.debug.completion.CompletionHandler.getCharXPosition","flixel/system/debug/completion/CompletionHandler.hx",119,0x776a5e1a)
 HX_LOCAL_STACK_FRAME(_hx_pos_d4c828664754b74a_129_getCompletedText,"flixel.system.debug.completion.CompletionHandler","getCompletedText",0xf1336e6c,"flixel.system.debug.completion.CompletionHandler.getCompletedText","flixel/system/debug/completion/CompletionHandler.hx",129,0x776a5e1a)
 HX_LOCAL_STACK_FRAME(_hx_pos_d4c828664754b74a_133_completed,"flixel.system.debug.completion.CompletionHandler","completed",0x0b4edb41,"flixel.system.debug.completion.CompletionHandler.completed","flixel/system/debug/completion/CompletionHandler.hx",133,0x776a5e1a)
-HX_LOCAL_STACK_FRAME(_hx_pos_d4c828664754b74a_143_selectionChanged,"flixel.system.debug.completion.CompletionHandler","selectionChanged",0xb4bbcb12,"flixel.system.debug.completion.CompletionHandler.selectionChanged","flixel/system/debug/completion/CompletionHandler.hx",143,0x776a5e1a)
+HX_LOCAL_STACK_FRAME(_hx_pos_d4c828664754b74a_141_selectionChanged,"flixel.system.debug.completion.CompletionHandler","selectionChanged",0xb4bbcb12,"flixel.system.debug.completion.CompletionHandler.selectionChanged","flixel/system/debug/completion/CompletionHandler.hx",141,0x776a5e1a)
 HX_LOCAL_STACK_FRAME(_hx_pos_d4c828664754b74a_159_getReadableType,"flixel.system.debug.completion.CompletionHandler","getReadableType",0x71f1aeb6,"flixel.system.debug.completion.CompletionHandler.getReadableType","flixel/system/debug/completion/CompletionHandler.hx",159,0x776a5e1a)
 HX_LOCAL_STACK_FRAME(_hx_pos_d4c828664754b74a_175_completionClosed,"flixel.system.debug.completion.CompletionHandler","completionClosed",0xa9f12ef2,"flixel.system.debug.completion.CompletionHandler.completionClosed","flixel/system/debug/completion/CompletionHandler.hx",175,0x776a5e1a)
 HX_LOCAL_STACK_FRAME(_hx_pos_d4c828664754b74a_185_getPathBeforeDot,"flixel.system.debug.completion.CompletionHandler","getPathBeforeDot",0x9fcc8f79,"flixel.system.debug.completion.CompletionHandler.getPathBeforeDot","flixel/system/debug/completion/CompletionHandler.hx",185,0x776a5e1a)
@@ -205,45 +196,14 @@ HX_DEFINE_DYNAMIC_FUNC1(CompletionHandler_obj,onKeyUp,(void))
 
 void CompletionHandler_obj::invokeCompletion(::String path,bool isPeriod){
             	HX_STACKFRAME(&_hx_pos_d4c828664754b74a_78_invokeCompletion)
-HXLINE(  80)		::Array< ::String > items = null();
-HXLINE(  82)		try {
-            			HX_STACK_CATCHABLE( ::Dynamic, 0);
-HXLINE(  84)			if ((path.length != (int)0)) {
-HXLINE(  86)				 ::Dynamic output = ::flixel::_hx_system::debug::console::ConsoleUtil_obj::runCommand(path);
-HXLINE(  87)				items = ::flixel::_hx_system::debug::console::ConsoleUtil_obj::getFields(output);
-            			}
-            		}
-            		catch( ::Dynamic _hx_e){
-            			if (_hx_e.IsClass<  ::Dynamic >() ){
-            				HX_STACK_BEGIN_CATCH
-            				 ::Dynamic e = _hx_e;
-HXLINE(  92)				if (isPeriod) {
-HXLINE(  94)					this->completionList->close();
-HXLINE(  95)					return;
-            				}
-            			}
-            			else {
-            				HX_STACK_DO_THROW(_hx_e);
-            			}
-            		}
-HXLINE(  99)		if (hx::IsNull( items )) {
-HXLINE( 100)			items = this->getGlobals();
-            		}
-HXLINE( 102)		if ((items->length > (int)0)) {
-HXLINE( 103)			 ::flixel::_hx_system::debug::completion::CompletionList _hx_tmp = this->completionList;
-HXDLIN( 103)			_hx_tmp->show(this->getCharXPosition(),items);
-            		}
-            		else {
-HXLINE( 105)			this->completionList->close();
-            		}
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC2(CompletionHandler_obj,invokeCompletion,(void))
 
 ::Array< ::String > CompletionHandler_obj::getGlobals(){
-            	HX_STACKFRAME(&_hx_pos_d4c828664754b74a_112_getGlobals)
-HXDLIN( 112)		return ::flixel::util::FlxStringUtil_obj::sortAlphabetically(::flixel::_hx_system::debug::console::ConsoleUtil_obj::interp->getGlobals());
+            	HX_STACKFRAME(&_hx_pos_d4c828664754b74a_114_getGlobals)
+HXDLIN( 114)		return ::Array_obj< ::String >::__new(0);
             	}
 
 
@@ -289,34 +249,7 @@ HXLINE( 137)		this->input->setSelection(insert.length,insert.length);
 HX_DEFINE_DYNAMIC_FUNC1(CompletionHandler_obj,completed,(void))
 
 void CompletionHandler_obj::selectionChanged(::String selectedItem){
-            	HX_STACKFRAME(&_hx_pos_d4c828664754b74a_143_selectionChanged)
-HXDLIN( 143)		try {
-            			HX_STACK_CATCHABLE( ::Dynamic, 0);
-HXLINE( 145)			::String lastWord = this->getLastWord(this->input->get_text());
-HXLINE( 146)			::String command = this->getCompletedText(lastWord,selectedItem);
-HXLINE( 147)			 ::Dynamic output = ::flixel::_hx_system::debug::console::ConsoleUtil_obj::runCommand(command);
-HXLINE( 149)			this->watchingSelection = true;
-HXLINE( 150)			{
-HXLINE( 150)				 ::flixel::_hx_system::frontEnds::WatchFrontEnd _this = ::flixel::FlxG_obj::watch;
-HXDLIN( 150)				 ::flixel::_hx_system::debug::watch::Watch _hx_tmp = ::flixel::FlxG_obj::game->debugger->watch;
-HXDLIN( 150)				_hx_tmp->add(HX_("Entry Value",03,6d,c3,a1),::flixel::_hx_system::debug::watch::WatchEntryData_obj::QUICK(::Std_obj::string(output)));
-            			}
-HXLINE( 151)			{
-HXLINE( 151)				 ::flixel::_hx_system::frontEnds::WatchFrontEnd _this1 = ::flixel::FlxG_obj::watch;
-HXDLIN( 151)				 ::Dynamic value = this->getReadableType(output);
-HXDLIN( 151)				 ::flixel::_hx_system::debug::watch::Watch _hx_tmp1 = ::flixel::FlxG_obj::game->debugger->watch;
-HXDLIN( 151)				_hx_tmp1->add(HX_("Entry Type",68,5d,1b,ed),::flixel::_hx_system::debug::watch::WatchEntryData_obj::QUICK(::Std_obj::string(value)));
-            			}
-            		}
-            		catch( ::Dynamic _hx_e){
-            			if (_hx_e.IsClass<  ::Dynamic >() ){
-            				HX_STACK_BEGIN_CATCH
-            				 ::Dynamic e = _hx_e;
-            			}
-            			else {
-            				HX_STACK_DO_THROW(_hx_e);
-            			}
-            		}
+            	HX_STACKFRAME(&_hx_pos_d4c828664754b74a_141_selectionChanged)
             	}
 
 
